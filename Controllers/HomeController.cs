@@ -81,7 +81,7 @@ public class HomeController : Controller
         int numeroIntento = (ultimaRespuesta?.NumeroIntento ?? 0) + 1;
 
         // Guardar respuesta
-        BD.GuardarRespuesta(partidaId, 1, numeroIntento, respuesta, esCorrecto);
+        BD.GuardarRespuesta(partidaId, 1, numeroIntento, respuesta ?? "", esCorrecto);
 
         if (esCorrecto)
         {
@@ -128,7 +128,7 @@ public class HomeController : Controller
         var ultimaRespuesta = BD.ObtenerUltimaRespuesta(partidaId, 2);
         int numeroIntento = (ultimaRespuesta?.NumeroIntento ?? 0) + 1;
 
-        BD.GuardarRespuesta(partidaId, 2, numeroIntento, respuesta, esCorrecto);
+        BD.GuardarRespuesta(partidaId, 2, numeroIntento, respuesta ?? "", esCorrecto);
 
         if (esCorrecto)
         {
@@ -175,7 +175,7 @@ public class HomeController : Controller
         var ultimaRespuesta = BD.ObtenerUltimaRespuesta(partidaId, 3);
         int numeroIntento = (ultimaRespuesta?.NumeroIntento ?? 0) + 1;
 
-        BD.GuardarRespuesta(partidaId, 3, numeroIntento, respuesta, esCorrecto);
+        BD.GuardarRespuesta(partidaId, 3, numeroIntento, respuesta ?? "", esCorrecto);
 
         if (esCorrecto)
         {
@@ -222,7 +222,7 @@ public class HomeController : Controller
         var ultimaRespuesta = BD.ObtenerUltimaRespuesta(partidaId, 4);
         int numeroIntento = (ultimaRespuesta?.NumeroIntento ?? 0) + 1;
 
-        BD.GuardarRespuesta(partidaId, 4, numeroIntento, respuesta, esCorrecto);
+        BD.GuardarRespuesta(partidaId, 4, numeroIntento, respuesta ?? "", esCorrecto);
 
         if (esCorrecto)
         {

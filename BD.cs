@@ -62,7 +62,7 @@ namespace SALA_DE_ESCAPE
         }
 
         // Guardar Respuesta
-        public static void GuardarRespuesta(int partidaId, int salaId, int numeroIntento, string respuesta, bool esCorrecto)
+        public static void GuardarRespuesta(int partidaId, int salaId, int numeroIntento, string? respuesta, bool esCorrecto)
         {
             using (var connection = new SqlConnection(_connectionString))
             {

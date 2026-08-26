@@ -1,0 +1,79 @@
+@{
+    ViewData["Title"] = "¡VICTORIA! - La Tormenta Final";
+}
+
+<div class="row justify-content-center align-items-center" style="min-height: 100vh; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);">
+    <div class="col-md-8">
+        <div class="text-center">
+            <!-- Animación de victoria -->
+            <div style="font-size: 5rem; margin-bottom: 20px; animation: bounce 1s infinite;">
+                🏆
+            </div>
+
+            <h1 style="color: #00d4ff; font-weight: bold; font-size: 3rem; margin-bottom: 10px; text-shadow: 0 0 20px #00d4ff;">
+                ¡VICTORIA!
+            </h1>
+
+            <h2 style="color: #e94560; font-size: 1.8rem; margin-bottom: 30px;">
+                ¡Felicidades, @ViewBag.NombreParticipante!
+            </h2>
+
+            <div class="card shadow-lg" style="background-color: #0f3460; border: 3px solid #00d4ff; border-radius: 15px; padding: 40px;">
+                <div style="margin-bottom: 30px;">
+                    <p style="color: #ccc; font-size: 1.2rem; line-height: 1.8;">
+                        Has logrado escapar de <strong style="color: #e94560;">La Tormenta Final</strong> y sobrevivir en la isla de Fortnite.
+                    </p>
+                    <p style="color: #ccc; font-size: 1.2rem;">
+                        Resolviste todos los acertijos y demostraste ser un verdadero jugador de élite. 🎮
+                    </p>
+                </div>
+
+                <!-- Resumen de logros -->
+                <div style="background-color: #1a1a2e; padding: 20px; border-radius: 10px; margin-bottom: 30px; border-left: 4px solid #00d4ff;">
+                    <p style="color: #00d4ff; font-weight: bold; margin-bottom: 15px;">📊 LOGROS DESBLOQUEADOS:</p>
+                    <ul style="color: #ccc; text-align: left; list-style: none; padding: 0; margin: 0;">
+                        <li style="margin-bottom: 10px;">⭐ Escapista - Completaste todas las salas</li>
+                        <li style="margin-bottom: 10px;">🧠 Solucionador - Resolviste acertijos complejos</li>
+                        <li style="margin-bottom: 10px;">⚡ Tormentero - Sobreviviste La Tormenta Final</li>
+                        <li>🏆 Campeón - ¡Alcanzaste la victoria!</li>
+                    </ul>
+                </div>
+
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <a href="@Url.Action("Index", "Home")" class="btn btn-lg w-100" style="background-color: #e94560; color: #fff; font-weight: bold; border-radius: 8px;">
+                            🔄 REINTENTAR
+                        </a>
+                    </div>
+                    <div class="col-md-6">
+                        <a href="javascript:void(0);" class="btn btn-lg w-100" style="background-color: #00d4ff; color: #000; font-weight: bold; border-radius: 8px;" onclick="compartir()">
+                            📤 COMPARTIR
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-top: 40px; color: #aaa; font-size: 0.95rem;">
+                <p>Gracias por jugar La Tormenta Final</p>
+                <p style="margin: 5px 0;">Desarrollado con ♥️ en ASP.NET Core MVC</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    @@keyframes bounce {
+        0%, 100% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-20px);
+        }
+    }
+</style>
+
+<script>
+    function compartir() {
+        alert('¡Desafía a tus amigos a escapar de La Tormenta Final en 🎮 Fortnite!');
+    }
+</script>

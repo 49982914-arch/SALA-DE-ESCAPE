@@ -1,0 +1,106 @@
+Z:\2026\programacionarda\SALA DE ESCAPE\obj\Debug\net9.0\SALA DE ESCAPE.csproj.AssemblyReference.cache
+Z:\2026\programacionarda\SALA DE ESCAPE\obj\Debug\net9.0\rpswa.dswa.cache.json
+Z:\2026\programacionarda\SALA DE ESCAPE\obj\Debug\net9.0\SALA DE ESCAPE.GeneratedMSBuildEditorConfig.editorconfig
+Z:\2026\programacionarda\SALA DE ESCAPE\obj\Debug\net9.0\SALA DE ESCAPE.AssemblyInfoInputs.cache
+Z:\2026\programacionarda\SALA DE ESCAPE\obj\Debug\net9.0\SALA DE ESCAPE.AssemblyInfo.cs
+Z:\2026\programacionarda\SALA DE ESCAPE\obj\Debug\net9.0\SALA DE ESCAPE.csproj.CoreCompileInputs.cache
+Z:\2026\programacionarda\SALA DE ESCAPE\obj\Debug\net9.0\SALA DE ESCAPE.MvcApplicationPartsAssemblyInfo.cache
+Z:\2026\programacionarda\SALA DE ESCAPE\obj\Debug\net9.0\SALA DE ESCAPE.RazorAssemblyInfo.cache
+Z:\2026\programacionarda\SALA DE ESCAPE\obj\Debug\net9.0\SALA DE ESCAPE.RazorAssemblyInfo.cs
+Z:\2026\programacionarda\SALA DE ESCAPE\obj\Debug\net9.0\SALA DE ESCAPE.sourcelink.json
+Z:\2026\programacionarda\SALA DE ESCAPE\bin\Debug\net9.0\appsettings.Development.json
+Z:\2026\programacionarda\SALA DE ESCAPE\bin\Debug\net9.0\appsettings.json
+Z:\2026\programacionarda\SALA DE ESCAPE\bin\Debug\net9.0\SALA DE ESCAPE.staticwebassets.runtime.json
+Z:\2026\programacionarda\SALA DE ESCAPE\bin\Debug\net9.0\SALA DE ESCAPE.staticwebassets.endpoints.json
+Z:\2026\programacionarda\SALA DE ESCAPE\bin\Debug\net9.0\SALA DE ESCAPE.exe
+Z:\2026\programacionarda\SALA DE ESCAPE\bin\Debug\net9.0\SALA DE ESCAPE.deps.json
+Z:\2026\programacionarda\SALA DE ESCAPE\bin\Debug\net9.0\SALA DE ESCAPE.runtimeconfig.json
+Z:\2026\programacionarda\SALA DE ESCAPE\bin\Debug\net9.0\SALA DE ESCAPE.dll
+Z:\2026\programacionarda\SALA DE ESCAPE\bin\Debug\net9.0\SALA DE ESCAPE.pdb
+Z:\2026\programacionarda\SALA DE ESCAPE\bin\Debug\net9.0\Dapper.dll
+Z:\2026\programacionarda\SALA DE ESCAPE\bin\Debug\net9.0\System.Data.SqlClient.dll
+Z:\2026\programacionarda\SALA DE ESCAPE\bin\Debug\net9.0\runtimes\win-arm64\native\sni.dll
+Z:\2026\programacionarda\SALA DE ESCAPE\bin\Debug\net9.0\runtimes\win-x64\native\sni.dll
+Z:\2026\programacionarda\SALA DE ESCAPE\bin\Debug\net9.0\runtimes\win-x86\native\sni.dll
+Z:\2026\programacionarda\SALA DE ESCAPE\bin\Debug\net9.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+Z:\2026\programacionarda\SALA DE ESCAPE\bin\Debug\net9.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+Z:\2026\programacionarda\SALA DE ESCAPE\obj\Debug\net9.0\rjimswa.dswa.cache.json
+Z:\2026\programacionarda\SALA DE ESCAPE\obj\Debug\net9.0\rjsmrazor.dswa.cache.json
+Z:\2026\programacionarda\SALA DE ESCAPE\obj\Debug\net9.0\rjsmcshtml.dswa.cache.json
+Z:\2026\programacionarda\SALA DE ESCAPE\obj\Debug\net9.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+Z:\2026\programacionarda\SALA DE ESCAPE\obj\Debug\net9.0\scopedcss\bundle\SALA DE ESCAPE.styles.css
+Z:\2026\programacionarda\SALA DE ESCAPE\obj\Debug\net9.0\scopedcss\projectbundle\SALA DE ESCAPE.bundle.scp.css
+Z:\2026\programacionarda\SALA DE ESCAPE\obj\Debug\net9.0\compressed\76nr0032v8-b9sayid5wm.gz
+Z:\2026\programacionarda\SALA DE ESCAPE\obj\Debug\net9.0\compressed\hi1ugqjudb-61n19gt1b8.gz
+Z:\2026\programacionarda\SALA DE ESCAPE\obj\Debug\net9.0\compressed\lj4ef2zp18-xtxxf3hu2r.gz
+Z:\2026\programacionarda\SALA DE ESCAPE\obj\Debug\net9.0\compressed\isaapp1iuf-bqjiyaj88i.gz
+Z:\2026\programacionarda\SALA DE ESCAPE\obj\Debug\net9.0\compressed\fj1s6u4fou-c2jlpeoesf.gz
+Z:\2026\programacionarda\SALA DE ESCAPE\obj\Debug\net9.0\compressed\gkkpvlwf4c-erw9l3u2r3.gz
+Z:\2026\programacionarda\SALA DE ESCAPE\obj\Debug\net9.0\compressed\srn21vw1ym-aexeepp0ev.gz
+Z:\2026\programacionarda\SALA DE ESCAPE\obj\Debug\net9.0\compressed\pxkphksf30-d7shbmvgxk.gz
+Z:\2026\programacionarda\SALA DE ESCAPE\obj\Debug\net9.0\compressed\0rig6xnoe9-ausgxo2sd3.gz
+Z:\2026\programacionarda\SALA DE ESCAPE\obj\Debug\net9.0\compressed\q9pxaizjaf-k8d9w2qqmf.gz
+Z:\2026\programacionarda\SALA DE ESCAPE\obj\Debug\net9.0\compressed\cctj6jq51h-cosvhxvwiu.gz
+Z:\2026\programacionarda\SALA DE ESCAPE\obj\Debug\net9.0\compressed\b0j5dkcnko-ub07r2b239.gz
+Z:\2026\programacionarda\SALA DE ESCAPE\obj\Debug\net9.0\compressed\zwlktfa06p-fvhpjtyr6v.gz
+Z:\2026\programacionarda\SALA DE ESCAPE\obj\Debug\net9.0\compressed\jcg0wu5iey-b7pk76d08c.gz
+Z:\2026\programacionarda\SALA DE ESCAPE\obj\Debug\net9.0\compressed\yjjfuv4vvv-fsbi9cje9m.gz
+Z:\2026\programacionarda\SALA DE ESCAPE\obj\Debug\net9.0\compressed\y5u6jj8g4s-rzd6atqjts.gz
+Z:\2026\programacionarda\SALA DE ESCAPE\obj\Debug\net9.0\compressed\qsfe0zfjcc-ee0r1s7dh0.gz
+Z:\2026\programacionarda\SALA DE ESCAPE\obj\Debug\net9.0\compressed\5ladawegku-dxx9fxp4il.gz
+Z:\2026\programacionarda\SALA DE ESCAPE\obj\Debug\net9.0\compressed\6rx3unx2kf-jd9uben2k1.gz
+Z:\2026\programacionarda\SALA DE ESCAPE\obj\Debug\net9.0\compressed\7ojbddiunn-khv3u5hwcm.gz
+Z:\2026\programacionarda\SALA DE ESCAPE\obj\Debug\net9.0\compressed\p5ld8bp0lm-r4e9w2rdcm.gz
+Z:\2026\programacionarda\SALA DE ESCAPE\obj\Debug\net9.0\compressed\6g0t0qernp-lcd1t2u6c8.gz
+Z:\2026\programacionarda\SALA DE ESCAPE\obj\Debug\net9.0\compressed\lko1anar1u-c2oey78nd0.gz
+Z:\2026\programacionarda\SALA DE ESCAPE\obj\Debug\net9.0\compressed\9z9svx7wyt-tdbxkamptv.gz
+Z:\2026\programacionarda\SALA DE ESCAPE\obj\Debug\net9.0\compressed\bb87m2vft2-j5mq2jizvt.gz
+Z:\2026\programacionarda\SALA DE ESCAPE\obj\Debug\net9.0\compressed\tefv4a0rr5-06098lyss8.gz
+Z:\2026\programacionarda\SALA DE ESCAPE\obj\Debug\net9.0\compressed\0znlnui3fo-nvvlpmu67g.gz
+Z:\2026\programacionarda\SALA DE ESCAPE\obj\Debug\net9.0\compressed\382vs1y3ud-s35ty4nyc5.gz
+Z:\2026\programacionarda\SALA DE ESCAPE\obj\Debug\net9.0\compressed\w4awtur4k4-pj5nd1wqec.gz
+Z:\2026\programacionarda\SALA DE ESCAPE\obj\Debug\net9.0\compressed\m5x6dbk4tb-46ein0sx1k.gz
+Z:\2026\programacionarda\SALA DE ESCAPE\obj\Debug\net9.0\compressed\twez7tkv2w-v0zj4ognzu.gz
+Z:\2026\programacionarda\SALA DE ESCAPE\obj\Debug\net9.0\compressed\jyldykcvsv-37tfw0ft22.gz
+Z:\2026\programacionarda\SALA DE ESCAPE\obj\Debug\net9.0\compressed\hzromlcw1g-hrwsygsryq.gz
+Z:\2026\programacionarda\SALA DE ESCAPE\obj\Debug\net9.0\compressed\mjx1v08ue6-pk9g2wxc8p.gz
+Z:\2026\programacionarda\SALA DE ESCAPE\obj\Debug\net9.0\compressed\s3ny14aamm-ft3s53vfgj.gz
+Z:\2026\programacionarda\SALA DE ESCAPE\obj\Debug\net9.0\compressed\qoymshngfc-6cfz1n2cew.gz
+Z:\2026\programacionarda\SALA DE ESCAPE\obj\Debug\net9.0\compressed\xou35qe9nt-6pdc2jztkx.gz
+Z:\2026\programacionarda\SALA DE ESCAPE\obj\Debug\net9.0\compressed\a9awopkao7-493y06b0oq.gz
+Z:\2026\programacionarda\SALA DE ESCAPE\obj\Debug\net9.0\compressed\j4cb4ulp2n-iovd86k7lj.gz
+Z:\2026\programacionarda\SALA DE ESCAPE\obj\Debug\net9.0\compressed\h55ajbxcb7-vr1egmr9el.gz
+Z:\2026\programacionarda\SALA DE ESCAPE\obj\Debug\net9.0\compressed\jr3cl3fkp6-kbrnm935zg.gz
+Z:\2026\programacionarda\SALA DE ESCAPE\obj\Debug\net9.0\compressed\lemzqa98sr-jj8uyg4cgr.gz
+Z:\2026\programacionarda\SALA DE ESCAPE\obj\Debug\net9.0\compressed\58lih7gwfp-y7v9cxd14o.gz
+Z:\2026\programacionarda\SALA DE ESCAPE\obj\Debug\net9.0\compressed\11iuobnzs8-notf2xhcfb.gz
+Z:\2026\programacionarda\SALA DE ESCAPE\obj\Debug\net9.0\compressed\54u3l9k4pl-h1s4sie4z3.gz
+Z:\2026\programacionarda\SALA DE ESCAPE\obj\Debug\net9.0\compressed\7mxtbbfyg2-63fj8s7r0e.gz
+Z:\2026\programacionarda\SALA DE ESCAPE\obj\Debug\net9.0\compressed\0cxmh98vk0-0j3bgjxly4.gz
+Z:\2026\programacionarda\SALA DE ESCAPE\obj\Debug\net9.0\compressed\d8cb1h2240-47otxtyo56.gz
+Z:\2026\programacionarda\SALA DE ESCAPE\obj\Debug\net9.0\compressed\5dyctd5ztq-4v8eqarkd7.gz
+Z:\2026\programacionarda\SALA DE ESCAPE\obj\Debug\net9.0\compressed\jufj2qem8n-356vix0kms.gz
+Z:\2026\programacionarda\SALA DE ESCAPE\obj\Debug\net9.0\compressed\b6xxjdzd7p-83jwlth58m.gz
+Z:\2026\programacionarda\SALA DE ESCAPE\obj\Debug\net9.0\compressed\q6jbv5fmuc-mrlpezrjn3.gz
+Z:\2026\programacionarda\SALA DE ESCAPE\obj\Debug\net9.0\compressed\hmcosvl3l7-lzl9nlhx6b.gz
+Z:\2026\programacionarda\SALA DE ESCAPE\obj\Debug\net9.0\compressed\fsi9kqdjot-ag7o75518u.gz
+Z:\2026\programacionarda\SALA DE ESCAPE\obj\Debug\net9.0\compressed\awvus0w6qe-x0q3zqp4vz.gz
+Z:\2026\programacionarda\SALA DE ESCAPE\obj\Debug\net9.0\compressed\twlkxmj8px-0i3buxo5is.gz
+Z:\2026\programacionarda\SALA DE ESCAPE\obj\Debug\net9.0\compressed\cxkkzl3bby-o1o13a6vjx.gz
+Z:\2026\programacionarda\SALA DE ESCAPE\obj\Debug\net9.0\compressed\st3zv0qsi5-ttgo8qnofa.gz
+Z:\2026\programacionarda\SALA DE ESCAPE\obj\Debug\net9.0\compressed\ei3akatzw2-2z0ns9nrw6.gz
+Z:\2026\programacionarda\SALA DE ESCAPE\obj\Debug\net9.0\compressed\8lz69pnn08-muycvpuwrr.gz
+Z:\2026\programacionarda\SALA DE ESCAPE\obj\Debug\net9.0\compressed\n7n6ai6fa4-87fc7y1x7t.gz
+Z:\2026\programacionarda\SALA DE ESCAPE\obj\Debug\net9.0\compressed\alftb3as5z-mlv21k5csn.gz
+Z:\2026\programacionarda\SALA DE ESCAPE\obj\Debug\net9.0\compressed\4z979e3r7g-xvubfwmw6w.gz
+Z:\2026\programacionarda\SALA DE ESCAPE\obj\Debug\net9.0\compressed\bfd4xqvsc5-xvubfwmw6w.gz
+Z:\2026\programacionarda\SALA DE ESCAPE\obj\Debug\net9.0\staticwebassets.build.json
+Z:\2026\programacionarda\SALA DE ESCAPE\obj\Debug\net9.0\staticwebassets.build.json.cache
+Z:\2026\programacionarda\SALA DE ESCAPE\obj\Debug\net9.0\staticwebassets.development.json
+Z:\2026\programacionarda\SALA DE ESCAPE\obj\Debug\net9.0\staticwebassets.build.endpoints.json
+Z:\2026\programacionarda\SALA DE ESCAPE\obj\Debug\net9.0\SALA DE .01E8BD44.Up2Date
+Z:\2026\programacionarda\SALA DE ESCAPE\obj\Debug\net9.0\SALA DE ESCAPE.dll
+Z:\2026\programacionarda\SALA DE ESCAPE\obj\Debug\net9.0\refint\SALA DE ESCAPE.dll
+Z:\2026\programacionarda\SALA DE ESCAPE\obj\Debug\net9.0\SALA DE ESCAPE.pdb
+Z:\2026\programacionarda\SALA DE ESCAPE\obj\Debug\net9.0\SALA DE ESCAPE.genruntimeconfig.cache
+Z:\2026\programacionarda\SALA DE ESCAPE\obj\Debug\net9.0\ref\SALA DE ESCAPE.dll

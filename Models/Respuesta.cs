@@ -6,7 +6,7 @@ namespace SALA_DE_ESCAPE.Models
         public int PartidaId { get; set; }
         public int SalaId { get; set; }
         public int NumeroIntento { get; set; }
-        public string RespuestaIngresada { get; set; }
+        public string? RespuestaIngresada { get; set; }
         public bool EsCorrecto { get; set; }
     }
 }

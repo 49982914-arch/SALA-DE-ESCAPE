@@ -1,0 +1,76 @@
+@{
+    ViewData["Title"] = "Sala 3 - La Tormenta Final";
+}
+
+<div class="row justify-content-center" style="min-height: 90vh; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); padding: 30px 0;">
+    <div class="col-md-8">
+        <!-- Encabezado -->
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <div>
+                <h2 style="color: #00d4ff; font-weight: bold;">Bienvenido, <span style="color: #e94560;">@ViewBag.NombreParticipante</span></h2>
+                <p style="color: #aaa; margin: 5px 0;">Sala 3 de 4</p>
+            </div>
+            <div style="background-color: #0f3460; padding: 15px 20px; border-radius: 8px;">
+                <p style="color: #00d4ff; font-weight: bold; margin: 0;">⚡ PROGRESO</p>
+                <div class="progress mt-2" style="height: 8px; background-color: #1a1a2e;">
+                    <div class="progress-bar" role="progressbar" style="width: 75%; background-color: #00d4ff;"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tarjeta de la Sala -->
+        <div class="card shadow-lg mb-4" style="background-color: #0f3460; border: 2px solid #00d4ff; border-radius: 15px;">
+            <div class="card-body p-5">
+                <h3 style="color: #e94560; margin-bottom: 20px;">
+                    💎 @ViewBag.Sala.Nombre
+                </h3>
+
+                <p style="color: #ccc; font-size: 1.1rem; line-height: 1.6; margin-bottom: 30px;">
+                    @ViewBag.Sala.Descripcion
+                </p>
+
+                @if (!string.IsNullOrEmpty(ViewBag.Error))
+                {
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert" style="border-radius: 8px;">
+                        ❌ @ViewBag.Error
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                }
+
+                <form method="post" action="@Url.Action("Sala3", "Home")">
+                    <div class="mb-4">
+                        <label for="respuesta" class="form-label" style="color: #00d4ff; font-weight: bold;">
+                            ¿Cuál es tu respuesta?
+                        </label>
+                        <input type="text" 
+                               class="form-control form-control-lg" 
+                               id="respuesta" 
+                               name="respuesta" 
+                               placeholder="Escribe tu respuesta..." 
+                               required
+                               style="background-color: #1a1a2e; color: #fff; border: 2px solid #00d4ff; border-radius: 8px;">
+                    </div>
+
+                    <button type="submit" class="btn btn-lg w-100" style="background-color: #e94560; color: #fff; font-weight: bold; border-radius: 8px;">
+                        ✓ ENVIAR RESPUESTA
+                    </button>
+                </form>
+
+                @if (ViewBag.Intentos > 0)
+                {
+                    <p style="color: #00d4ff; margin-top: 20px; text-align: center;">
+                        📊 Intentos realizados: <strong>@ViewBag.Intentos</strong>
+                    </p>
+                }
+            </div>
+        </div>
+
+        <!-- Pista (opcional) -->
+        <div style="background-color: #0f3460; border-left: 4px solid #e94560; padding: 20px; border-radius: 8px;">
+            <p style="color: #00d4ff; font-weight: bold; margin: 0 0 10px 0;">💡 PISTA:</p>
+            <p style="color: #ccc; margin: 0;">
+                Es lo que buscas desesperadamente en cada partida de Fortnite...
+            </p>
+        </div>
+    </div>
+</div>
