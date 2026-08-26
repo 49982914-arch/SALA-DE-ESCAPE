@@ -1,14 +1,14 @@
 @{
-    ViewData["Title"] = "Sala 1 - La Tormenta Final";
+    ViewData["Title"] = "Sala 1 - Galaxy & Aurora - La Tormenta Final";
 }
 
-<div class="row justify-content-center" style="min-height: 90vh; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); padding: 30px 0;">
-    <div class="col-md-8">
+<div class="row justify-content-center" style="min-height: 90vh; background: linear-gradient(135deg, #0a0e27 0%, #1a1a4f 100%); padding: 30px 0;">
+    <div class="col-md-9">
         <!-- Encabezado -->
         <div class="d-flex justify-content-between align-items-center mb-4">
             <div>
-                <h2 style="color: #00d4ff; font-weight: bold;">Bienvenido, <span style="color: #e94560;">@ViewBag.NombreParticipante</span></h2>
-                <p style="color: #aaa; margin: 5px 0;">Sala 1 de 4</p>
+                <h2 style="color: #00d4ff; font-weight: bold;">🌌 Galaxy & Aurora</h2>
+                <p style="color: #aaa; margin: 5px 0;">Sala 1 de 4 - Escondido en las estrellas</p>
             </div>
             <div style="background-color: #0f3460; padding: 15px 20px; border-radius: 8px;">
                 <p style="color: #00d4ff; font-weight: bold; margin: 0;">⚡ PROGRESO</p>
@@ -18,16 +18,24 @@
             </div>
         </div>
 
-        <!-- Tarjeta de la Sala -->
-        <div class="card shadow-lg mb-4" style="background-color: #0f3460; border: 2px solid #00d4ff; border-radius: 15px;">
+        <!-- Tarjeta Principal -->
+        <div class="card shadow-lg mb-4" style="background: linear-gradient(135deg, #0f2440 0%, #1a0f3f 100%); border: 2px solid #00d4ff; border-radius: 15px; box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);">
             <div class="card-body p-5">
-                <h3 style="color: #e94560; margin-bottom: 20px;">
-                    🌪️ @ViewBag.Sala.Nombre
-                </h3>
-
-                <p style="color: #ccc; font-size: 1.1rem; line-height: 1.6; margin-bottom: 30px;">
-                    @ViewBag.Sala.Descripcion
-                </p>
+                <!-- Ambientación -->
+                <div style="margin-bottom: 40px; line-height: 2;">
+                    <p style="color: #b0a8e0; font-size: 1.05rem; text-align: justify;">
+                        Flotando en el infinito espacio, descubres una dimensión olvidada. La piel <strong>Galaxy</strong> brilla con energía cósmica, mientras el efecto <strong>Aurora</strong> ilumina tu camino. 
+                        Las estrellas que rodean la <strong>Estación Espacial en Coordenada 4821</strong> parpadeann en un patrón hipnotizante.
+                    </p>
+                    <p style="color: #a88fff; font-size: 1.05rem; text-align: justify; margin-top: 15px;">
+                        Según los datos del <strong>Satélite #4</strong>, en exactamente <strong>8:21</strong> horas se abrirá un portal interdimensional. 
+                        Pero espera... el <strong>Planeta Número 4821-Beta</strong> emite una señal especial que podría ser tu clave de escape.
+                    </p>
+                    <p style="color: #9d8fe0; font-size: 1.05rem; text-align: justify; margin-top: 15px;">
+                        Los códigos antiguos susurran al viento intergaláctico. El universo te observa desde la <strong>Dimensión 4821</strong>. 
+                        ¿Podrás descifrar el mensaje oculto entre las estrellas?
+                    </p>
+                </div>
 
                 @if (!string.IsNullOrEmpty(ViewBag.Error))
                 {
@@ -37,22 +45,22 @@
                     </div>
                 }
 
-                <form method="post" action="@Url.Action("Sala1", "Home")">
+                <!-- Formulario -->
+                <form method="post" action="@Url.Action("Sala1", "Home")" id="sala1Form">
                     <div class="mb-4">
-                        <label for="respuesta" class="form-label" style="color: #00d4ff; font-weight: bold;">
-                            ¿Cuál es tu respuesta?
+                        <label for="respuesta" class="form-label" style="color: #00d4ff; font-weight: bold; font-size: 1.1rem;">
+                            🔐 Ingresa el código que encontraste:
                         </label>
                         <input type="text" 
                                class="form-control form-control-lg" 
                                id="respuesta" 
                                name="respuesta" 
-                               placeholder="Escribe tu respuesta..." 
-                               required
-                               style="background-color: #1a1a2e; color: #fff; border: 2px solid #00d4ff; border-radius: 8px;">
+                               placeholder="Escribe el código..." 
+                               style="background-color: #1a1a2e; color: #fff; border: 2px solid #00d4ff; border-radius: 8px; font-size: 1.1rem;">
                     </div>
 
-                    <button type="submit" class="btn btn-lg w-100" style="background-color: #e94560; color: #fff; font-weight: bold; border-radius: 8px;">
-                        ✓ ENVIAR RESPUESTA
+                    <button type="submit" class="btn btn-lg w-100" style="background-color: #e94560; color: #fff; font-weight: bold; border-radius: 8px; font-size: 1.1rem;">
+                        ✓ DESBLOQUEAR PORTAL
                     </button>
                 </form>
 
@@ -65,12 +73,24 @@
             </div>
         </div>
 
-        <!-- Pista (opcional) -->
-        <div style="background-color: #0f3460; border-left: 4px solid #e94560; padding: 20px; border-radius: 8px;">
+        <!-- Pista -->
+        <div style="background-color: #0f3460; border-left: 4px solid #e94560; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
             <p style="color: #00d4ff; font-weight: bold; margin: 0 0 10px 0;">💡 PISTA:</p>
             <p style="color: #ccc; margin: 0;">
-                Piensa en lo primero que ves cuando cae el circulo en Fortnite...
+                Presta atención a los números que se repiten en las coordenadas y referencias especiales del texto. Busca un patrón de 4 dígitos.
             </p>
+        </div>
+
+        <!-- Visuals nebulosa -->
+        <div style="text-align: center; color: #00d4ff; font-size: 2rem; opacity: 0.6;">
+            ✨ 🌟 ✦ 🌠 ✨
         </div>
     </div>
 </div>
+
+<style>
+    #respuesta {
+        text-transform: lowercase;
+        letter-spacing: 2px;
+    }
+</style>

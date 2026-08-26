@@ -1,59 +1,107 @@
 @{
-    ViewData["Title"] = "Sala 4 - La Tormenta Final";
+    ViewData["Title"] = "Sala 4 - El Bus de Batalla - La Tormenta Final";
 }
 
-<div class="row justify-content-center" style="min-height: 90vh; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); padding: 30px 0;">
-    <div class="col-md-8">
+<div class="row justify-content-center" style="min-height: 100vh; background: linear-gradient(135deg, #001a4d 0%, #0d0d1a 100%); padding: 30px 0;">
+    <div class="col-md-9">
         <!-- Encabezado -->
-        <div class="d-flex justify-content-between align-items-center mb-4">
+        <div class="d-flex justify-content-between align-items-center mb-4" style="position: relative; z-index: 100;">
             <div>
-                <h2 style="color: #00d4ff; font-weight: bold;">Bienvenido, <span style="color: #e94560;">@ViewBag.NombreParticipante</span></h2>
-                <p style="color: #aaa; margin: 5px 0;">Sala 4 de 4 - FINAL</p>
+                <h2 style="color: #00d4ff; font-weight: bold;">✈️ El Bus de Batalla</h2>
+                <p style="color: #aaa; margin: 5px 0;">Sala 4 de 4 - FINAL - Salta antes de que sea demasiado tarde</p>
             </div>
             <div style="background-color: #0f3460; padding: 15px 20px; border-radius: 8px;">
                 <p style="color: #00d4ff; font-weight: bold; margin: 0;">⚡ PROGRESO</p>
                 <div class="progress mt-2" style="height: 8px; background-color: #1a1a2e;">
-                    <div class="progress-bar" role="progressbar" style="width: 90%; background-color: #00d4ff;"></div>
+                    <div class="progress-bar" role="progressbar" style="width: 100%; background-color: #00d4ff;"></div>
                 </div>
             </div>
         </div>
 
-        <!-- Tarjeta de la Sala -->
-        <div class="card shadow-lg mb-4" style="background-color: #0f3460; border: 2px solid #e94560; border-radius: 15px;">
+        <!-- Zona de juego - Cielo nocturno -->
+        <div style="background: linear-gradient(180deg, #001a4d 0%, #003366 50%, #0066cc 100%); 
+                   border: 3px solid #e94560; 
+                   border-radius: 15px; 
+                   min-height: 400px; 
+                   position: relative; 
+                   overflow: hidden;
+                   display: flex;
+                   flex-direction: column;
+                   align-items: center;
+                   justify-content: center;
+                   margin-bottom: 30px;
+                   box-shadow: 0 0 40px rgba(233, 69, 96, 0.4);">
+            
+            <!-- Bus de Batalla -->
+            <div id="bus" style="position: absolute;
+                               top: 30px;
+                               left: 50%;
+                               transform: translateX(-50%);
+                               font-size: 3rem;
+                               animation: busMovement 20s linear infinite;
+                               z-index: 10;">
+                ✈️
+            </div>
+
+            <!-- Texto épico principal -->
+            <p id="textoEpico" style="color: #e94560;
+                                     font-size: 2.5rem;
+                                     font-weight: bold;
+                                     text-align: center;
+                                     text-shadow: 0 0 20px rgba(233, 69, 96, 0.8);
+                                     margin: 0 0 20px 0;
+                                     z-index: 5;">
+                TIEMPO: <span id="contador">15</span>s
+            </p>
+
+            <!-- Instrucción -->
+            <p style="color: #00d4ff;
+                     font-size: 1.3rem;
+                     text-align: center;
+                     margin: 20px 0;
+                     z-index: 5;
+                     text-shadow: 0 0 10px rgba(0, 212, 255, 0.6);">
+                🛑 PRESIONA <strong>ESPACIO</strong> para saltar del bus
+            </p>
+
+            <!-- Pulsating text -->
+            <p id="pulsatingText" style="color: #ffd700;
+                                        font-size: 1.4rem;
+                                        font-weight: bold;
+                                        text-align: center;
+                                        margin: 30px 0 0 0;
+                                        animation: pulse 1s infinite;
+                                        z-index: 5;">
+                ¡EL CÍRCULO SE ESTÁ CERRANDO!
+            </p>
+
+            <!-- Círculo de la tormenta bajando -->
+            <div id="circulo" style="position: absolute;
+                                    bottom: 0;
+                                    left: 50%;
+                                    transform: translateX(-50%);
+                                    width: 100%;
+                                    height: 0%;
+                                    background: radial-gradient(ellipse at center, rgba(0, 212, 255, 0.2) 0%, rgba(0, 212, 255, 0.5) 100%);
+                                    border-top: 3px solid #00d4ff;
+                                    z-index: 1;"></div>
+        </div>
+
+        <!-- Tarjeta de estado -->
+        <div class="card shadow-lg" style="background: linear-gradient(135deg, #1a0f3f 0%, #0f2440 100%); border: 2px solid #00d4ff; border-radius: 15px;">
             <div class="card-body p-5">
-                <h3 style="color: #e94560; margin-bottom: 20px;">
-                    ⚡ @ViewBag.Sala.Nombre
-                </h3>
+                <div id="estadoDiv" style="text-align: center;">
+                    <p style="color: #00d4ff; font-size: 1.1rem; margin-bottom: 20px;">
+                        ⏳ La cuenta atrás está en marcha... 
+                    </p>
+                    <p style="color: #ccc; font-size: 1rem;">
+                        Tienes 15 segundos para presionar ESPACIO y saltar del bus antes de que llegue la tormenta.
+                    </p>
+                </div>
 
-                <p style="color: #ccc; font-size: 1.1rem; line-height: 1.6; margin-bottom: 30px;">
-                    @ViewBag.Sala.Descripcion
-                </p>
-
-                @if (!string.IsNullOrEmpty(ViewBag.Error))
-                {
-                    <div class="alert alert-danger alert-dismissible fade show" role="alert" style="border-radius: 8px;">
-                        ❌ @ViewBag.Error
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                    </div>
-                }
-
-                <form method="post" action="@Url.Action("Sala4", "Home")">
-                    <div class="mb-4">
-                        <label for="respuesta" class="form-label" style="color: #00d4ff; font-weight: bold;">
-                            ¿Cuál es tu respuesta?
-                        </label>
-                        <input type="text" 
-                               class="form-control form-control-lg" 
-                               id="respuesta" 
-                               name="respuesta" 
-                               placeholder="Escribe tu respuesta..." 
-                               required
-                               style="background-color: #1a1a2e; color: #fff; border: 2px solid #00d4ff; border-radius: 8px;">
-                    </div>
-
-                    <button type="submit" class="btn btn-lg w-100" style="background-color: #e94560; color: #fff; font-weight: bold; border-radius: 8px;">
-                        ✓ ENVIAR RESPUESTA
-                    </button>
+                <!-- Formulario oculto -->
+                <form method="post" action="@Url.Action("Sala4", "Home")" id="sala4Form" style="display: none;">
+                    <input type="hidden" name="respuesta" value="espacio">
                 </form>
 
                 @if (ViewBag.Intentos > 0)
@@ -64,13 +112,81 @@
                 }
             </div>
         </div>
-
-        <!-- Pista Final -->
-        <div style="background-color: #0f3460; border-left: 4px solid #e94560; padding: 20px; border-radius: 8px;">
-            <p style="color: #e94560; font-weight: bold; margin: 0 0 10px 0;">💡 PISTA FINAL:</p>
-            <p style="color: #ccc; margin: 0;">
-                Es lo que todos quieren conseguir en Fortnite... ¡El objetivo final!
-            </p>
-        </div>
     </div>
 </div>
+
+<style>
+    @@keyframes busMovement {
+        0% { left: -50px; }
+        100% { left: calc(100% + 50px); }
+    }
+
+    @@keyframes pulse {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.5; }
+    }
+
+    body {
+        overflow: hidden;
+    }
+</style>
+
+<script>
+    let tiempoRestante = 15;
+    let salto = false;
+    const sala4Form = document.getElementById('sala4Form');
+    const contador = document.getElementById('contador');
+    const estadoDiv = document.getElementById('estadoDiv');
+    const circulo = document.getElementById('circulo');
+    const textoEpico = document.getElementById('textoEpico');
+
+    // Detectar presión de ESPACIO
+    document.addEventListener('keydown', (e) => {
+        if (e.code === 'Space' && !salto && tiempoRestante > 0) {
+            e.preventDefault();
+            salto = true;
+            
+            // Mostrar mensaje de victoria
+            estadoDiv.innerHTML = '🎉 <p style="color: #00d4ff; font-size: 1.5rem; font-weight: bold; margin: 0;">¡SALTASTE A TIEMPO!</p><p style="color: #ccc; margin-top: 10px;">¡Escapaste del bus y sobreviviste! ¡Avanzas a la victoria!</p>';
+            
+            // Enviar formulario automáticamente
+            setTimeout(() => {
+                sala4Form.submit();
+            }, 1000);
+        }
+    });
+
+    // Cuenta regresiva
+    const intervalo = setInterval(() => {
+        tiempoRestante--;
+        contador.textContent = tiempoRestante;
+
+        // Cambiar colores según el tiempo
+        if (tiempoRestante <= 5) {
+            textoEpico.style.color = '#ff0000';
+            textoEpico.style.animation = 'pulse 0.5s infinite';
+        }
+
+        // Subir el círculo visualmente
+        circulo.style.height = ((15 - tiempoRestante) / 15 * 100) + '%';
+
+        // Tiempo se acabó
+        if (tiempoRestante <= 0) {
+            clearInterval(intervalo);
+            salto = true;
+            
+            // Mostrar mensaje de derrota
+            estadoDiv.innerHTML = '💀 <p style="color: #e94560; font-size: 1.5rem; font-weight: bold; margin: 0;">¡ELIMINADO!</p><p style="color: #ccc; margin-top: 10px;">La tormenta te alcanzó. Deberás reintentar.</p>';
+            textoEpico.textContent = '¡GAME OVER!';
+            textoEpico.style.color = '#e94560';
+            
+            // Mostrar botón para reintentar después de 3 segundos
+            setTimeout(() => {
+                estadoDiv.innerHTML += '<br><a href="' + window.location.href + '" class="btn btn-danger mt-3">🔄 REINTENTAR</a>';
+            }, 3000);
+        }
+    }, 1000);
+
+    // Mostrar instrucción visual
+    textoEpico.style.animation = 'pulse 1s infinite';
+</script>
