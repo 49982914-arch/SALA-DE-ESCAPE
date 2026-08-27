@@ -9,10 +9,10 @@ public class HomeController : Controller
     // Respuestas correctas para cada sala
     private static readonly Dictionary<int, string> RespuestasCorrectas = new()
     {
-        { 1, "storm" },
-        { 2, "fortnite" },
-        { 3, "loot" },
-        { 4, "victory" }
+        { 1, "aura" },
+        { 2, "dorado" },
+        { 3, "aliados" },
+        { 4, "espacio" }
     };
 
     // Index GET - Mostrar pantalla de inicio

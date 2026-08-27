@@ -1,5 +1,5 @@
 using System.Data;
-using System.Data.SqlClient;
+using Microsoft.Data.SqlClient;
 using Dapper;
 using SALA_DE_ESCAPE.Models;
 
@@ -7,12 +7,7 @@ namespace SALA_DE_ESCAPE
 {
     public class BD
     {
-        private static string _connectionString = "";
-
-        public static void Configurar(string connectionString)
-        {
-            _connectionString = connectionString;
-        }
+        private static string _connectionString = @"Server=localhost;Database=TormentaFinal;Integrated Security=True;TrustServerCertificate=True;";
 
         // Crear Jugador
         public static int CrearJugador(string nombre)

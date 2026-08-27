@@ -8,9 +8,6 @@ builder.Services.AddSession(options => options.IdleTimeout = TimeSpan.FromMinute
 
 var app = builder.Build();
 
-// Configurar BD con connection string
-BD.Configurar(builder.Configuration.GetConnectionString("DefaultConnection"));
-
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
