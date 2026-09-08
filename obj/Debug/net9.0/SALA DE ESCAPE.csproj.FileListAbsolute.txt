@@ -144,5 +144,5 @@ Z:\2026\programacionarda\SALA DE ESCAPE\bin\Debug\net9.0\runtimes\win-x64\native
 Z:\2026\programacionarda\SALA DE ESCAPE\bin\Debug\net9.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
 Z:\2026\programacionarda\SALA DE ESCAPE\bin\Debug\net9.0\runtimes\win\lib\net9.0\System.Diagnostics.EventLog.dll
 Z:\2026\programacionarda\SALA DE ESCAPE\bin\Debug\net9.0\runtimes\win\lib\net9.0\System.Security.Cryptography.Pkcs.dll
-Z:\2026\programacionarda\SALA DE ESCAPE\obj\Debug\net9.0\compressed\76nr0032v8-g0qih46479.gz
-Z:\2026\programacionarda\SALA DE ESCAPE\obj\Debug\net9.0\compressed\lj4ef2zp18-t6z3bwqyt1.gz
+Z:\2026\programacionarda\SALA DE ESCAPE\obj\Debug\net9.0\compressed\76nr0032v8-bbo7fl910a.gz
+Z:\2026\programacionarda\SALA DE ESCAPE\obj\Debug\net9.0\compressed\lj4ef2zp18-jj4kbx039e.gz

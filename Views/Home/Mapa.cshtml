@@ -1,0 +1,93 @@
+@{
+    ViewData["Title"] = "Mapa de Misiones - La Tormenta Final";
+
+    int salaActual = 1;
+    int.TryParse(ViewBag.SalaActual?.ToString(), out salaActual);
+    if (salaActual < 1) salaActual = 1;
+
+    int completadas = salaActual - 1;
+    if (completadas < 0) completadas = 0;
+    if (completadas > 4) completadas = 4;
+
+    string EstadoCiudad(int sala)
+    {
+        if (sala < salaActual) return "completada";
+        if (sala == salaActual && sala <= 4) return "siguiente";
+        return "bloqueada";
+    }
+
+    string BadgeCiudad(int sala)
+    {
+        var estado = EstadoCiudad(sala);
+        if (estado == "completada") return "✅";
+        if (estado == "siguiente") return "➡️";
+        return "🔒";
+    }
+
+    string EstadoConector(int despuesDeCiudad)
+    {
+        return (despuesDeCiudad + 1 == salaActual) ? "activo" : "inactivo";
+    }
+
+    string siguienteAccion = (salaActual >= 1 && salaActual <= 4) ? ("Sala" + salaActual) : "Victoria";
+}
+
+<div class="mapa-container">
+    <div class="mapa-header">
+        <h1 class="mapa-title">🗺️ MAPA DE MISIONES</h1>
+        <p class="mapa-subtitle">Recorre la isla y completa cada desafío</p>
+    </div>
+
+    <div class="mapa-cities-row">
+        <div class="mapa-city">
+            <div class="mapa-city-card mapa-city-@EstadoCiudad(1)" style="background-image: url('/images/fatal.jpg');">
+                <span class="mapa-city-badge">@BadgeCiudad(1)</span>
+            </div>
+            <p class="mapa-city-name">Junk Junction</p>
+        </div>
+
+        <div class="mapa-connector mapa-connector-@EstadoConector(1)">
+            <span class="mapa-connector-line"></span>
+            <span class="mapa-connector-arrow">➡️</span>
+        </div>
+
+        <div class="mapa-city">
+            <div class="mapa-city-card mapa-city-@EstadoCiudad(2)" style="background-image: url('/images/tilted.jpg');">
+                <span class="mapa-city-badge">@BadgeCiudad(2)</span>
+            </div>
+            <p class="mapa-city-name">Ciudad de Midas</p>
+        </div>
+
+        <div class="mapa-connector mapa-connector-@EstadoConector(2)">
+            <span class="mapa-connector-line"></span>
+            <span class="mapa-connector-arrow">➡️</span>
+        </div>
+
+        <div class="mapa-city">
+            <div class="mapa-city-card mapa-city-@EstadoCiudad(3)" style="background-image: url('/images/lonely.jpg');">
+                <span class="mapa-city-badge">@BadgeCiudad(3)</span>
+            </div>
+            <p class="mapa-city-name">Lonely Lodge</p>
+        </div>
+
+        <div class="mapa-connector mapa-connector-@EstadoConector(3)">
+            <span class="mapa-connector-line"></span>
+            <span class="mapa-connector-arrow">➡️</span>
+        </div>
+
+        <div class="mapa-city">
+            <div class="mapa-city-card mapa-city-@EstadoCiudad(4)" style="background-image: url('/images/fatal.jpg');">
+                <span class="mapa-city-badge">@BadgeCiudad(4)</span>
+            </div>
+            <p class="mapa-city-name">Fatal Fields</p>
+        </div>
+    </div>
+
+    <div class="mapa-panel">
+        <div class="mapa-panel-info">
+            <p class="mapa-panel-player">👤 @ViewBag.NombreParticipante</p>
+            <p class="mapa-panel-progress">Sala @completadas de 4 completadas</p>
+        </div>
+        <a href="@Url.Action(siguienteAccion, "Home")" class="mapa-continue-btn">CONTINUAR MISIÓN ➡️</a>
+    </div>
+</div>

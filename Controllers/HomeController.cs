@@ -9,7 +9,7 @@ public class HomeController : Controller
     // Respuestas correctas para cada sala
     private static readonly Dictionary<int, string> RespuestasCorrectas = new()
     {
-        { 1, "aura" },
+        { 1, "4821" },
         { 2, "dorado" },
         { 3, "aliados" },
         { 4, "espacio" }
@@ -64,7 +64,7 @@ public class HomeController : Controller
         var partidaId = HttpContext.Session.GetInt32("PartidaId") ?? 0;
         var ultimaRespuesta = BD.ObtenerUltimaRespuesta(partidaId, 1);
         if (ultimaRespuesta != null && ultimaRespuesta.EsCorrecto)
-            return RedirectToAction("Sala2");
+            return RedirectToAction("Mapa");
 
         return View();
     }
@@ -87,7 +87,7 @@ public class HomeController : Controller
         {
             BD.ActualizarSalaActual(partidaId, 2);
             HttpContext.Session.SetInt32("SalaActual", 2);
-            return RedirectToAction("Sala2");
+            return RedirectToAction("VideoMidas");
         }
 
         ViewBag.Error = "Respuesta incorrecta. Intenta nuevamente.";
@@ -113,7 +113,7 @@ public class HomeController : Controller
         var partidaId = HttpContext.Session.GetInt32("PartidaId") ?? 0;
         var ultimaRespuesta = BD.ObtenerUltimaRespuesta(partidaId, 2);
         if (ultimaRespuesta != null && ultimaRespuesta.EsCorrecto)
-            return RedirectToAction("Sala3");
+            return RedirectToAction("Mapa");
 
         return View();
     }
@@ -134,7 +134,7 @@ public class HomeController : Controller
         {
             BD.ActualizarSalaActual(partidaId, 3);
             HttpContext.Session.SetInt32("SalaActual", 3);
-            return RedirectToAction("Sala3");
+            return RedirectToAction("Mapa");
         }
 
         ViewBag.Error = "Respuesta incorrecta. Intenta nuevamente.";
@@ -160,7 +160,7 @@ public class HomeController : Controller
         var partidaId = HttpContext.Session.GetInt32("PartidaId") ?? 0;
         var ultimaRespuesta = BD.ObtenerUltimaRespuesta(partidaId, 3);
         if (ultimaRespuesta != null && ultimaRespuesta.EsCorrecto)
-            return RedirectToAction("Sala4");
+            return RedirectToAction("Mapa");
 
         return View();
     }
@@ -181,7 +181,7 @@ public class HomeController : Controller
         {
             BD.ActualizarSalaActual(partidaId, 4);
             HttpContext.Session.SetInt32("SalaActual", 4);
-            return RedirectToAction("Sala4");
+            return RedirectToAction("Mapa");
         }
 
         ViewBag.Error = "Respuesta incorrecta. Intenta nuevamente.";
@@ -244,6 +244,31 @@ public class HomeController : Controller
             return RedirectToAction("Index");
 
         ViewBag.NombreParticipante = HttpContext.Session.GetString("NombreParticipante");
+        return View();
+    }
+
+    // VideoMidas GET - Cinemática entre Sala1 y el Mapa
+    [HttpGet]
+    public IActionResult VideoMidas()
+    {
+        if (HttpContext.Session.GetString("NombreParticipante") == null)
+            return RedirectToAction("Index");
+
+        return View();
+    }
+
+    // Mapa GET - Hub entre salas
+    [HttpGet]
+    public IActionResult Mapa()
+    {
+        if (HttpContext.Session.GetString("NombreParticipante") == null)
+            return RedirectToAction("Index");
+
+        var salaActual = HttpContext.Session.GetInt32("SalaActual") ?? 1;
+
+        ViewBag.SalaActual = salaActual;
+        ViewBag.NombreParticipante = HttpContext.Session.GetString("NombreParticipante");
+
         return View();
     }
 

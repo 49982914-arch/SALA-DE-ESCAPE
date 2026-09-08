@@ -24,6 +24,10 @@ build_property.EnableCodeStyleSeverity =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[Z:/2026/programacionarda/SALA DE ESCAPE/Views/Home/Mapa.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxNYXBhLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [Z:/2026/programacionarda/SALA DE ESCAPE/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -46,6 +50,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [Z:/2026/programacionarda/SALA DE ESCAPE/Views/Home/Victoria.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxWaWN0b3JpYS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[Z:/2026/programacionarda/SALA DE ESCAPE/Views/Home/VideoMidas.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxWaWRlb01pZGFzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [Z:/2026/programacionarda/SALA DE ESCAPE/Views/Shared/Error.cshtml]

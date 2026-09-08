@@ -1,295 +1,86 @@
 @{
-    ViewData["Title"] = "Sala 1 - Dimensión Cósmica - La Tormenta Final";
+    ViewData["Title"] = "Sala 1 - Código Secreto Estelar - La Tormenta Final";
 }
 
-<style>
-    body {
-        background: linear-gradient(135deg, #0a0e27 0%, #1a1a4f 50%, #0d0022 100%);
-        min-height: 100vh;
-        overflow-x: hidden;
-    }
+<audio id="audioTormenta" autoplay loop>
+    <source src="/images/tormenta.m4a" type="audio/mp4">
+</audio>
 
-    .glitch {
-        position: relative;
-        animation: glitch-animation 3s infinite;
-    }
+<div id="starryBackground" class="starry-background"></div>
 
-    @@keyframes glitch-animation {
-        0% { text-shadow: none; }
-        20% { text-shadow: -2px 0 #00d4ff, 2px 0 #e94560; }
-        40% { text-shadow: 2px 0 #00d4ff, -2px 0 #e94560; }
-        60% { text-shadow: -2px 0 #e94560, 2px 0 #00d4ff; }
-        80% { text-shadow: 2px 0 #e94560, -2px 0 #00d4ff; }
-        100% { text-shadow: none; }
-    }
+<div class="sala1-cosmic-container">
+    <div class="sala1-epic-header">
+        <h1 class="sala1-title">⭐ CÓDIGO SECRETO ESTELAR ⭐</h1>
+        <p class="sala1-subtitle">La Dimensión Cósmica te espera</p>
+    </div>
 
-    .floating {
-        animation: floating 3s ease-in-out infinite;
-    }
-
-    @@keyframes floating {
-        0%, 100% { transform: translateY(0px); }
-        50% { transform: translateY(-20px); }
-    }
-
-    .pulse-glow {
-        animation: pulse-glow 2s ease-in-out infinite;
-    }
-
-    @@keyframes pulse-glow {
-        0%, 100% { 
-            box-shadow: 0 0 20px rgba(0, 212, 255, 0.5), inset 0 0 20px rgba(0, 212, 255, 0.1);
-        }
-        50% { 
-            box-shadow: 0 0 40px rgba(0, 212, 255, 0.8), inset 0 0 30px rgba(0, 212, 255, 0.2);
-        }
-    }
-
-    .cosmic-border {
-        position: relative;
-        border: 2px solid transparent;
-        background-clip: padding-box;
-        background-image: linear-gradient(135deg, #00d4ff, #e94560, #e94560, #00d4ff);
-        border-image: linear-gradient(135deg, #00d4ff 0%, #e94560 50%, #00d4ff 100%) 1;
-    }
-
-    .stars {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-    }
-
-    .star {
-        position: absolute;
-        width: 2px;
-        height: 2px;
-        background: white;
-        border-radius: 50%;
-        opacity: 0.7;
-    }
-
-    .hint-box {
-        background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(233, 69, 96, 0.05) 100%);
-        border-left: 4px solid #e94560;
-        border-radius: 8px;
-        padding: 20px;
-        margin: 20px 0;
-    }
-</style>
-
-<div style="min-height: 100vh; padding: 20px 0; position: relative;">
-    <!-- Estrellas de fondo -->
-    <div class="stars" id="starsContainer"></div>
-
-    <div class="container" style="position: relative; z-index: 10;">
-        <!-- HEADER ÉPICO -->
-        <div class="row mb-5">
-            <div class="col-12 text-center">
-                <h1 class="glitch" style="color: #00d4ff; font-size: 3.5rem; font-weight: 900; text-shadow: 0 0 30px rgba(0, 212, 255, 0.8); letter-spacing: 3px; margin: 0;">
-                    ⚡ DIMENSIÓN CÓSMICA ⚡
-                </h1>
-                <p style="color: #e94560; font-size: 1.3rem; margin-top: 10px; font-weight: bold; text-shadow: 0 0 10px rgba(233, 69, 96, 0.6);">
-                    Donde las skins legendarias protegen los secretos del universo
-                </p>
+    <div class="sala1-characters-section">
+        <div class="character-left">
+            <img src="/images/skin galaxy 2026.png" alt="Galaxy" class="character-image">
+            <div class="speech-bubble speech-bubble-left">
+                <p class="speech-text">Bienvenido a la Dimensión Cósmica... algo no está bien aquí.</p>
             </div>
         </div>
 
-        <div class="row">
-            <!-- COLUMNA IZQUIERDA - IMÁGENES -->
-            <div class="col-md-5 mb-4">
-                <!-- Galaxy Skin -->
-                <div class="floating" style="margin-bottom: 30px;">
-                    <img src="~/images/Galaxi.jfif" 
-                         alt="Galaxy Skin" 
-                         style="width: 100%; 
-                                border-radius: 15px; 
-                                border: 3px solid #00d4ff;
-                                box-shadow: 0 0 30px rgba(0, 212, 255, 0.6);
-                                max-height: 300px;
-                                object-fit: cover;">
-                    <p style="color: #00d4ff; text-align: center; margin-top: 10px; font-weight: bold; font-size: 1.2rem;">
-                        GALAXY
-                    </p>
-                </div>
-
-                <!-- Aura Skin -->
-                <div class="floating" style="animation-delay: 0.5s;">
-                    <img src="~/images/aura skin 2026 sde.jpg" 
-                         alt="Aura Skin" 
-                         style="width: 100%; 
-                                border-radius: 15px; 
-                                border: 3px solid #e94560;
-                                box-shadow: 0 0 30px rgba(233, 69, 96, 0.6);
-                                max-height: 300px;
-                                object-fit: cover;">
-                    <p style="color: #e94560; text-align: center; margin-top: 10px; font-weight: bold; font-size: 1.2rem;">
-                        AURA
-                    </p>
-                </div>
-            </div>
-
-            <!-- COLUMNA DERECHA - ACERTIJO COMPLEJO -->
-            <div class="col-md-7">
-                <!-- Tarjeta principal del acertijo -->
-                <div class="pulse-glow" style="background: linear-gradient(135deg, rgba(15, 52, 96, 0.95) 0%, rgba(26, 15, 63, 0.95) 100%);
-                                              border: 2px solid #00d4ff;
-                                              border-radius: 20px;
-                                              padding: 40px;
-                                              backdrop-filter: blur(10px);">
-
-                    @if (!string.IsNullOrEmpty(ViewBag.Error))
-                    {
-                        <div class="alert alert-danger" style="border-radius: 10px; border: 2px solid #e94560; background-color: rgba(233, 69, 96, 0.2); color: #ff6b9d; font-weight: bold; margin-bottom: 20px;">
-                            ❌ @ViewBag.Error
-                        </div>
-                    }
-
-                    <!-- Introducción narrativa -->
-                    <p style="color: #ccc; font-size: 1.1rem; line-height: 1.8; margin-bottom: 30px; text-align: justify;">
-                        En lo profundo del universo intergaláctico, dos skins legendarias guardan un secreto ancestral. 
-                        <span style="color: #00d4ff; font-weight: bold;">GALAXY</span>, la entidad cósmica nacida de las estrellas moribundas, 
-                        y <span style="color: #e94560; font-weight: bold;">AURA</span>, la guardiana del brillo ethereal, 
-                        se han unido para sellar el portal interdimensional.
-                    </p>
-
-                    <!-- El acertijo visual y textual -->
-                    <div style="background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(233, 69, 96, 0.1) 100%);
-                               border-radius: 15px;
-                               padding: 25px;
-                               margin-bottom: 25px;
-                               border: 2px dashed #00d4ff;">
-
-                        <p style="color: #00d4ff; font-weight: bold; font-size: 1.1rem; margin-bottom: 15px;">
-                            📜 EL MANUSCRITO OLVIDADO DE LA TORMENTA:
-                        </p>
-
-                        <div style="background-color: rgba(0, 0, 0, 0.5); padding: 20px; border-radius: 10px; border-left: 4px solid #e94560;">
-                            <p style="color: #b0a8e0; font-size: 1rem; line-height: 1.9; margin: 0; font-family: 'Courier New', monospace;">
-                                <strong style="color: #00d4ff;">I.</strong> En el primer evento, donde la tormenta cayó como lluvia de fuego, 
-                                surgió una figura brillante. No era Galaxy quien primero pisó la isla... 
-                                fue algo más luminoso, más puro. Algo con un resplandor que no provenía de las estrellas. <br><br>
-
-                                <strong style="color: #e94560;">II.</strong> Los textos antiguos lo llamaban por muchos nombres. Algunos lo conocían como 
-                                "El Brillo Eterno", otros como "La Luz que Guía". Pero en la lengua olvidada de los guardianes cósmicos, 
-                                solo existe un verdadero nombre. Un nombre que suena como el viento entre las nebulosas. <br><br>
-
-                                <strong style="color: #00d4ff;">III.</strong> Cuando Galaxy encontró el portal dimensional, necesitaba un aliado. 
-                                Alguien cuya esencia brillara en la oscuridad. Alguien cuyo poder fuera tan puro que pudiera sellar el abismo mismo. 
-                                Y entonces lo supo: el nombre de la guardiana, la única con poder para defender el cosmos. <br><br>
-
-                                <strong style="color: #e94560;">IV.</strong> Escucha el susurro de las estrellas. Mira cómo brilla sin luz ajena. 
-                                Siente la energía que emana de dos mundos unidos. Lo que ves en el cielo nocturno cuando todo cambió, 
-                                lo que envuelve a la diosa guerrera en su corona de luz pura... 
-                                Ese es el verdadero nombre que buscas.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Pistas ocultas mas claras -->
-                    <div class="hint-box">
-                        <p style="color: #00d4ff; font-weight: bold; margin-bottom: 10px; font-size: 1rem;">
-                            💡 PISTAS REVELADAS:
-                        </p>
-                        <ul style="color: #ccc; margin: 0; padding-left: 20px; line-height: 2;">
-                            <li>En las palabras clave: <span style="color: #e94560; font-weight: bold;">Brillo Eterno, Luz Pura, Resplandor</span></li>
-                            <li>Galaxy necesita un aliado cuyo nombre sea <span style="color: #00d4ff; font-weight: bold;">puro y radiante</span></li>
-                            <li>Es el nombre de la guardiana que protege el portal con su <span style="color: #e94560; font-weight: bold;">corona de luz</span></li>
-                            <li>Busca algo que suena como: <span style="color: #00d4ff; font-weight: bold;">A... (4 letras totalles)</span></li>
-                        </ul>
-                    </div>
-
-                    <!-- Formulario de respuesta -->
-                    <form method="post" action="@Url.Action("Sala1", "Home")">
-                        <div class="mb-4">
-                            <label for="respuesta" style="color: #00d4ff; font-weight: bold; font-size: 1.15rem; display: block; margin-bottom: 12px;">
-                                🔐 INGRESA EL NOMBRE DE LA GUARDIANA:
-                            </label>
-                            <input type="text" 
-                                   class="form-control form-control-lg" 
-                                   id="respuesta" 
-                                   name="respuesta" 
-                                   placeholder="Escribe el nombre secreto..." 
-                                   style="background-color: rgba(26, 26, 46, 0.8); 
-                                          color: #00d4ff; 
-                                          border: 2px solid #00d4ff; 
-                                          border-radius: 10px; 
-                                          padding: 15px;
-                                          font-size: 1.1rem;
-                                          text-transform: lowercase;
-                                          transition: all 0.3s;
-                                          box-shadow: 0 0 10px rgba(0, 212, 255, 0.3);"
-                                   onfocus="this.style.boxShadow='0 0 30px rgba(0, 212, 255, 0.8)'; this.style.borderColor='#e94560';"
-                                   onblur="this.style.boxShadow='0 0 10px rgba(0, 212, 255, 0.3)'; this.style.borderColor='#00d4ff';">
-                        </div>
-
-                        <button type="submit" 
-                                class="btn btn-lg w-100" 
-                                style="background: linear-gradient(135deg, #e94560, #ff1a6e); 
-                                       color: #fff; 
-                                       font-weight: bold; 
-                                       border-radius: 10px;
-                                       padding: 15px;
-                                       font-size: 1.1rem;
-                                       border: none;
-                                       transition: all 0.3s;
-                                       box-shadow: 0 0 20px rgba(233, 69, 96, 0.5);"
-                                onmouseover="this.style.boxShadow='0 0 40px rgba(233, 69, 96, 0.8)'; this.style.transform='scale(1.02)';"
-                                onmouseout="this.style.boxShadow='0 0 20px rgba(233, 69, 96, 0.5)'; this.style.transform='scale(1)';">
-                            ⚡ DESBLOQUEAR PORTAL DIMENSIONAL ⚡
-                        </button>
-                    </form>
-
-                    @if (ViewBag.Intentos > 0)
-                    {
-                        <p style="color: #00d4ff; margin-top: 20px; text-align: center; font-weight: bold; font-size: 1rem;">
-                            📊 Intentos: <span style="color: #e94560; font-size: 1.2rem;">@ViewBag.Intentos</span>
-                        </p>
-                    }
-                </div>
-            </div>
-        </div>
-
-        <!-- FOOTER ÉPICO -->
-        <div class="row mt-5">
-            <div class="col-12 text-center">
-                <p style="color: #666; font-size: 0.95rem;">
-                    ✨ Las skins legendarias te observan desde las dimensiones paralelas ✨
-                </p>
+        <div class="character-right">
+            <img src="/images/aura skin 2026 sde.jpg" alt="Aura" class="character-image">
+            <div class="speech-bubble speech-bubble-right">
+                <p class="speech-text">Las letras guardan el código secreto... pero no todas son lo que parecen.</p>
             </div>
         </div>
     </div>
+
+    <div class="sala1-epic-text-container">
+        <p class="sala1-epic-text" id="epicText">🔍 Encuentra la combinación correcta... no todas las letras son lo que parecen. Une los números de las que brillan con luz propia, en orden.</p>
+    </div>
+
+    <div class="sala1-main-content">
+        <div class="sala1-instructions-card">
+            <p class="instructions-title">🎯 INSTRUCCIONES</p>
+            <p class="instructions-text">
+                Identifica las letras que brillan con luz propia (🔷 azul con glow).<br>
+                Une sus números en el orden en que aparecen para formar el código de acceso.
+            </p>
+        </div>
+
+        <p class="sala1-clear-instruction">✨ Une los números de las letras brillantes en orden para formar el código ✨</p>
+
+        <div class="sala1-stars-puzzle-container">
+            <div id="lettersPuzzleGrid" class="letters-puzzle-grid"></div>
+        </div>
+
+        <div class="sala1-progress-section">
+            <p class="progress-label">⚡ PROGRESO</p>
+            <div class="progress-bar-cosmic">
+                <div class="progress-bar-fill" style="width: 25%;"></div>
+            </div>
+        </div>
+
+        <div class="sala1-input-section">
+            <form method="post" action="@Url.Action("Sala1", "Home")" class="form-cosmic">
+                <label for="respuestaInput" class="input-label">🔐 INGRESA EL CÓDIGO:</label>
+                <input type="text" name="respuesta" id="respuestaInput" class="cosmic-input" placeholder="0000" maxlength="10">
+                <button type="submit" class="submit-btn-cosmic">⚡ DESBLOQUEAR PORTAL ⚡</button>
+            </form>
+
+            @if (!string.IsNullOrEmpty(ViewBag.Error))
+            {
+                <div class="alert-error">❌ @ViewBag.Error</div>
+            }
+
+            @if (ViewBag.Intentos > 0)
+            {
+                <p class="attempts-counter">📊 Intentos: <span class="attempts-number">@ViewBag.Intentos</span></p>
+            }
+        </div>
+
+        <div class="sala1-hint-card">
+            <p class="hint-title">💡 PISTA:</p>
+            <p class="hint-text">El código se forma uniendo (no sumando) los números de las letras que brillan con luz azul intensa, respetando el orden en que aparecen.</p>
+        </div>
+    </div>
+
+    <div class="sala1-footer">
+        <p>✨ Las skins legendarias te observan desde las dimensiones paralelas ✨</p>
+    </div>
 </div>
-
-<script>
-    // Generar estrellas de fondo
-    function crearEstrellas() {
-        const container = document.getElementById('starsContainer');
-        for (let i = 0; i < 100; i++) {
-            const star = document.createElement('div');
-            star.className = 'star';
-            star.style.left = Math.random() * 100 + '%';
-            star.style.top = Math.random() * 100 + '%';
-            star.style.opacity = Math.random() * 0.7 + 0.3;
-            star.style.animation = `twinkle ${Math.random() * 3 + 2}s infinite`;
-            container.appendChild(star);
-        }
-    }
-
-    // Animación de parpadeo para estrellas
-    const style = document.createElement('style');
-    style.textContent = `
-        @@keyframes twinkle {
-            0%, 100% { opacity: 0.3; }
-            50% { opacity: 1; }
-        }
-    `;
-    document.head.appendChild(style);
-
-    crearEstrellas();
-
-    // Auto-minúsculas en input
-    document.getElementById('respuesta').addEventListener('input', function() {
-        this.value = this.value.toLowerCase();
-    });
-</script>
