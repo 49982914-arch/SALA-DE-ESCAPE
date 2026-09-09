@@ -9,9 +9,9 @@ public class HomeController : Controller
     // Respuestas correctas para cada sala
     private static readonly Dictionary<int, string> RespuestasCorrectas = new()
     {
-        { 1, "4821" },
+        { 1, "107" },
         { 2, "dorado" },
-        { 3, "aliados" },
+        { 3, "laberinto" },
         { 4, "espacio" }
     };
 

@@ -1,97 +1,26 @@
 @{
-    ViewData["Title"] = "Sala 3 - El Documental de la Tormenta - La Tormenta Final";
+    ViewData["Title"] = "Sala 3 - Laberinto";
 }
 
-<audio id="audioTormenta" autoplay loop>
-    <source src="/images/tormenta.m4a" type="audio/mp4">
-</audio>
-
-<div class="sala3-bg">
-    <div class="container sala3-container-wrap">
+<div class="sala3-maze-bg">
+    <div class="container sala3-maze-container">
         <div class="text-center mb-4">
-            <h1 class="sala3-title">🎬 EL DOCUMENTAL DE LA TORMENTA</h1>
-            <p class="sala3-subtitle">Sala 3 de 4 - Descubre la verdad</p>
+            <h1 class="sala3-maze-title">LABERINTO DE JONESY</h1>
+            <p class="sala3-maze-subtitle">Sala 3 de 4 - Llega hasta el Bananoide sin caer en una pared.</p>
         </div>
 
-        <div class="sala3-progress-container mb-4">
-            <p class="sala3-progress-label">⚡ PROGRESO DEL DOCUMENTAL</p>
-            <div class="sala3-slides-progress">
-                <div class="sala3-slide-dot active" data-dot="0"></div>
-                <div class="sala3-slide-dot" data-dot="1"></div>
-                <div class="sala3-slide-dot" data-dot="2"></div>
-            </div>
-        </div>
-
-        <div class="sala3-documentary-container">
-            <div class="sala3-slide active" data-slide="0">
-                <h2 class="sala3-slide-title">📽️ Temporada 1 - El comienzo</h2>
-                <p class="sala3-slide-text">
-                    Hace años, el videojuego de batalla real capturó la imaginación de millones de jugadores en todo el mundo.
-                    La experiencia comenzó con jugadores saltando de un autobús mágico, buscando suministros y compitiendo por la victoria en una isla que cambiaría para siempre.
-                </p>
+        <div class="sala3-maze-panel">
+            <div class="sala3-maze-status">
+                <span class="sala3-maze-timer-label">TIEMPO</span>
+                <span id="mazeTimer" class="sala3-maze-timer">05:00</span>
             </div>
 
-            <div class="sala3-slide" data-slide="1">
-                <h2 class="sala3-slide-title">🎨 Temporada 2 - Las primeras skins</h2>
-                <div class="sala3-slide-images">
-                    <img src="/images/skin jonesey.png" alt="Jonesy" class="sala3-slide-img">
-                    <img src="/images/skin_banana_2026-removebg-preview.png" alt="Bananoide" class="sala3-slide-img">
-                </div>
-                <p class="sala3-slide-text">
-                    Con el tiempo llegaron muchísimas skins legendarias: Galaxy brillaba en el cielo nocturno, La Aura deslumbraba con su energía mística,
-                    Midas controlaba el oro con sus poderes y la Renegada traía el caos a la isla. Pero discretamente, entre la multitud, dos figuras
-                    ya estaban presentes desde el principio: Jonesy, el soldado clásico, y el Bananoide, la criatura amarilla más peculiar de todas.
-                </p>
-            </div>
-
-            <div class="sala3-slide" data-slide="2">
-                <h2 class="sala3-slide-title">⚡ El Gran Evento de la Tormenta Cero</h2>
-                <p class="sala3-slide-text">
-                    Cuando el cielo se abrió y la Tormenta Cero envolvió la isla entera, el destino de todos los jugadores quedó sellado para siempre.
-                    Entre el caos y la energía cósmica, solo quienes estuvieron allí desde el comienzo lograron sobrevivir al evento que cambió la historia.
-                </p>
-            </div>
-        </div>
-
-        <div class="sala3-quiz-section" id="quizSection">
-            <div class="sala3-quiz-card">
-                <p class="sala3-quiz-title">❓ ¿Cuáles fueron las dos skins que aparecieron visualmente en la Temporada 2?</p>
-
-                <div class="sala3-options">
-                    <div class="sala3-option" data-answer="a">
-                        <span class="sala3-option-label">A</span>
-                        <span class="sala3-option-text">Galaxy y Aura</span>
-                    </div>
-                    <div class="sala3-option" data-answer="b">
-                        <span class="sala3-option-label">B</span>
-                        <span class="sala3-option-text">Jonesy y el Bananoide</span>
-                    </div>
-                    <div class="sala3-option" data-answer="c">
-                        <span class="sala3-option-label">C</span>
-                        <span class="sala3-option-text">Midas y la Renegada</span>
-                    </div>
-                    <div class="sala3-option" data-answer="d">
-                        <span class="sala3-option-label">D</span>
-                        <span class="sala3-option-text">Todas las anteriores</span>
-                    </div>
-                </div>
-
-                <div id="quizError" class="alert-error" style="display: none;">❌ Respuesta incorrecta. Vuelve a pensar en lo que viste en la Temporada 2.</div>
-
-                @if (!string.IsNullOrEmpty(ViewBag.Error))
-                {
-                    <div class="alert-error">❌ @ViewBag.Error</div>
-                }
-
-                @if (ViewBag.Intentos > 0)
-                {
-                    <p class="sala3-attempts">📊 Intentos realizados: <strong>@ViewBag.Intentos</strong></p>
-                }
-            </div>
-
-            <form method="post" action="@Url.Action("Sala3", "Home")" id="sala3Form" style="display: none;">
-                <input type="hidden" name="respuesta" value="aliados">
-            </form>
+            <canvas id="mazeCanvas" width="800" height="800" aria-label="Laberinto de Jonesy"></canvas>
+            <p id="mazeMessage" class="sala3-maze-message">Usa las flechas del teclado para avanzar.</p>
         </div>
     </div>
 </div>
+
+<form id="sala3MazeForm" method="post" action="@Url.Action("Sala3", "Home")">
+    <input type="hidden" name="respuesta" value="laberinto" />
+</form>

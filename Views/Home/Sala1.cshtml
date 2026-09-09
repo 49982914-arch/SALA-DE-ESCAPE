@@ -1,5 +1,5 @@
 @{
-    ViewData["Title"] = "Sala 1 - Código Secreto Estelar - La Tormenta Final";
+    ViewData["Title"] = "Sala 1 - El secreto de las letras";
 }
 
 <audio id="audioTormenta" autoplay loop>
@@ -10,77 +10,49 @@
 
 <div class="sala1-cosmic-container">
     <div class="sala1-epic-header">
-        <h1 class="sala1-title">⭐ CÓDIGO SECRETO ESTELAR ⭐</h1>
-        <p class="sala1-subtitle">La Dimensión Cósmica te espera</p>
+        <h1 class="sala1-title">⭐ EL SECRETO DE LAS LETRAS ⭐</h1>
+        <p class="sala1-subtitle">En el principio del universo, todo comenzó con un código oculto.</p>
     </div>
 
     <div class="sala1-characters-section">
         <div class="character-left">
             <img src="/images/skin galaxy 2026.png" alt="Galaxy" class="character-image">
             <div class="speech-bubble speech-bubble-left">
-                <p class="speech-text">Bienvenido a la Dimensión Cósmica... algo no está bien aquí.</p>
+                <p class="speech-text">El origen de todo está escrito en las letras...</p>
             </div>
         </div>
 
         <div class="character-right">
             <img src="/images/aura skin 2026 sde.jpg" alt="Aura" class="character-image">
             <div class="speech-bubble speech-bubble-right">
-                <p class="speech-text">Las letras guardan el código secreto... pero no todas son lo que parecen.</p>
+                <p class="speech-text">Suma los valores de las que brillan y revela el secreto.</p>
             </div>
         </div>
     </div>
 
     <div class="sala1-epic-text-container">
-        <p class="sala1-epic-text" id="epicText">🔍 Encuentra la combinación correcta... no todas las letras son lo que parecen. Une los números de las que brillan con luz propia, en orden.</p>
+        <p id="sala1TypingText" class="sala1-typing-text"></p>
     </div>
 
-    <div class="sala1-main-content">
-        <div class="sala1-instructions-card">
-            <p class="instructions-title">🎯 INSTRUCCIONES</p>
-            <p class="instructions-text">
-                Identifica las letras que brillan con luz propia (🔷 azul con glow).<br>
-                Une sus números en el orden en que aparecen para formar el código de acceso.
-            </p>
-        </div>
-
-        <p class="sala1-clear-instruction">✨ Une los números de las letras brillantes en orden para formar el código ✨</p>
-
-        <div class="sala1-stars-puzzle-container">
-            <div id="lettersPuzzleGrid" class="letters-puzzle-grid"></div>
-        </div>
-
-        <div class="sala1-progress-section">
-            <p class="progress-label">⚡ PROGRESO</p>
-            <div class="progress-bar-cosmic">
-                <div class="progress-bar-fill" style="width: 25%;"></div>
-            </div>
-        </div>
-
-        <div class="sala1-input-section">
-            <form method="post" action="@Url.Action("Sala1", "Home")" class="form-cosmic">
-                <label for="respuestaInput" class="input-label">🔐 INGRESA EL CÓDIGO:</label>
-                <input type="text" name="respuesta" id="respuestaInput" class="cosmic-input" placeholder="0000" maxlength="10">
-                <button type="submit" class="submit-btn-cosmic">⚡ DESBLOQUEAR PORTAL ⚡</button>
-            </form>
-
-            @if (!string.IsNullOrEmpty(ViewBag.Error))
-            {
-                <div class="alert-error">❌ @ViewBag.Error</div>
-            }
-
-            @if (ViewBag.Intentos > 0)
-            {
-                <p class="attempts-counter">📊 Intentos: <span class="attempts-number">@ViewBag.Intentos</span></p>
-            }
-        </div>
-
-        <div class="sala1-hint-card">
-            <p class="hint-title">💡 PISTA:</p>
-            <p class="hint-text">El código se forma uniendo (no sumando) los números de las letras que brillan con luz azul intensa, respetando el orden en que aparecen.</p>
-        </div>
+    <div class="sala1-letters-panel">
+        <div id="lettersUniverse" class="letters-universe"></div>
     </div>
 
-    <div class="sala1-footer">
-        <p>✨ Las skins legendarias te observan desde las dimensiones paralelas ✨</p>
+    <div class="sala1-input-section">
+        <form method="post" action="@Url.Action("Sala1", "Home")" class="form-cosmic">
+            <label for="respuestaInput" class="input-label">🔐 SUMA LOS VALORES:</label>
+            <input type="text" name="respuesta" id="respuestaInput" class="cosmic-input" placeholder="107" maxlength="10" autocomplete="off">
+            <button type="submit" class="submit-btn-cosmic">⚡ DESCIFRAR CÓDIGO ⚡</button>
+        </form>
+
+        @if (!string.IsNullOrEmpty(ViewBag.Error))
+        {
+            <div class="alert-error">❌ @ViewBag.Error</div>
+        }
+
+        @if (ViewBag.Intentos > 0)
+        {
+            <p class="attempts-counter">📊 Intentos: <span class="attempts-number">@ViewBag.Intentos</span></p>
+        }
     </div>
 </div>
