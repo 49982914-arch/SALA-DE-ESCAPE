@@ -145,4 +145,4 @@ Z:\2026\programacionarda\SALA DE ESCAPE\bin\Debug\net9.0\runtimes\win-x86\native
 Z:\2026\programacionarda\SALA DE ESCAPE\bin\Debug\net9.0\runtimes\win\lib\net9.0\System.Diagnostics.EventLog.dll
 Z:\2026\programacionarda\SALA DE ESCAPE\bin\Debug\net9.0\runtimes\win\lib\net9.0\System.Security.Cryptography.Pkcs.dll
 Z:\2026\programacionarda\SALA DE ESCAPE\obj\Debug\net9.0\compressed\76nr0032v8-pv1itbfytw.gz
-Z:\2026\programacionarda\SALA DE ESCAPE\obj\Debug\net9.0\compressed\lj4ef2zp18-08ebkc2leb.gz
+Z:\2026\programacionarda\SALA DE ESCAPE\obj\Debug\net9.0\compressed\lj4ef2zp18-aiaasnv45g.gz

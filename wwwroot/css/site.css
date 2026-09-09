@@ -1092,20 +1092,32 @@ body {
 .letters-universe {
   position: relative;
   width: 100%;
-  min-height: 260px;
-  overflow: hidden;
+  min-height: 280px;
+  display: grid;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  grid-template-rows: repeat(5, minmax(52px, 1fr));
+  gap: 18px 10px;
+  align-items: center;
+  justify-items: center;
+  padding: 20px;
 }
 
 .letter-tile {
-  position: absolute;
-  transform: translate(-50%, -50%);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 56px;
+  min-height: 72px;
+  border-radius: 12px;
   text-align: center;
   user-select: none;
 }
 
 .letter-token {
   display: block;
-  font-size: clamp(1.3rem, 2vw, 2.1rem);
+  font-size: clamp(1.4rem, 2vw, 2.1rem);
   font-weight: 900;
   line-height: 1;
   color: #7a7d8a;
@@ -1116,10 +1128,10 @@ body {
 .letter-number {
   display: block;
   margin-top: 8px;
-  font-size: 0.78rem;
+  font-size: 0.8rem;
   font-weight: 700;
-  color: rgba(255, 255, 255, 0.18);
   letter-spacing: 0.08rem;
+  color: rgba(255, 255, 255, 0.42);
 }
 
 .letter-tile.active .letter-token {
@@ -1129,7 +1141,7 @@ body {
 
 .letter-tile.active .letter-number {
   color: rgba(0, 212, 255, 0.95);
-  text-shadow: 0 0 12px rgba(0, 212, 255, 0.5);
+  text-shadow: 0 0 10px rgba(0, 212, 255, 0.45);
 }
 
 .letter-tile.distractor .letter-token {
@@ -1138,202 +1150,49 @@ body {
 }
 
 .letter-tile.distractor .letter-number {
-  color: rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.38);
 }
 
-.sala1-input-section {
+.letter-tile.empty-slot {
+  visibility: hidden;
+}
+
+.sala1-pista-container {
   position: relative;
   z-index: 2;
-  max-width: 500px;
-  margin: 0 auto;
-}
-
-.form-cosmic {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.input-label {
-  color: #00d4ff;
-  font-weight: 800;
-  font-size: 1.05rem;
+  max-width: 760px;
+  margin: 18px auto 8px;
   text-align: center;
-  letter-spacing: 1px;
 }
 
-.cosmic-input {
-  background: rgba(15, 20, 36, 0.9);
-  border: 2px solid rgba(0, 212, 255, 0.7);
-  color: #f2f8ff;
-  border-radius: 10px;
-  text-align: center;
-  padding: 12px 16px;
-  font-size: 1.1rem;
-  font-weight: 700;
-  letter-spacing: 0.18rem;
-  box-shadow: 0 0 18px rgba(0, 212, 255, 0.2);
-}
-
-.cosmic-input:focus {
-  outline: none;
-  border-color: #e94560;
-  box-shadow: 0 0 20px rgba(233, 69, 96, 0.35), 0 0 30px rgba(0, 212, 255, 0.18);
-}
-
-.submit-btn-cosmic {
-  background: linear-gradient(135deg, #e94560 0%, #ff5b7d 100%);
-  color: #fff;
+.reveal-hint-btn {
+  background: linear-gradient(135deg, #00d4ff 0%, #38bdf8 100%);
+  color: #08131f;
   border: none;
-  border-radius: 10px;
-  padding: 12px 22px;
+  border-radius: 999px;
+  padding: 10px 18px;
   font-weight: 800;
-  letter-spacing: 1px;
-  cursor: pointer;
-  box-shadow: 0 0 24px rgba(233, 69, 96, 0.4);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  letter-spacing: 0.06rem;
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.35);
+  transition: transform 0.2s ease;
 }
 
-.submit-btn-cosmic:hover {
-  transform: translateY(-2px) scale(1.01);
-  box-shadow: 0 0 26px rgba(233, 69, 96, 0.6);
+.reveal-hint-btn:hover {
+  transform: translateY(-1px) scale(1.02);
 }
 
-.alert-error {
-  margin-top: 16px;
-  background: rgba(233, 69, 96, 0.14);
-  border: 1px solid rgba(233, 69, 96, 0.7);
-  color: #ff92af;
-  text-align: center;
-  border-radius: 10px;
-  padding: 12px 16px;
-  font-weight: 700;
-}
-
-.attempts-counter {
-  margin-top: 18px;
-  text-align: center;
-  color: #00d4ff;
-  font-weight: 700;
-}
-
-.attempts-number {
-  color: #e94560;
-}
-
-@media (max-width: 768px) {
-  .sala1-characters-section {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .character-left,
-  .character-right {
-    width: 100%;
-  }
-
-  .sala1-letters-panel {
-    min-height: 220px;
-  }
-
-  .letters-universe {
-    min-height: 220px;
-  }
-}
-
-/* === SALA 3 - LABERINTO === */
-.sala3-maze-bg {
-  min-height: 100vh;
-  background: linear-gradient(135deg, #0a0e27 0%, #1a1a2e 45%, #0d0d1a 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 40px 20px;
-}
-
-.sala3-maze-container {
-  width: 100%;
-  max-width: 900px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.sala3-maze-title {
-  color: #00d4ff;
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 900;
-  letter-spacing: 4px;
-  text-shadow: 0 0 25px rgba(0, 212, 255, 0.75);
-  margin: 0;
-}
-
-.sala3-maze-subtitle {
-  color: #f5f5ff;
-  font-size: 1.08rem;
+.reveal-hint-text {
   margin-top: 12px;
-  opacity: 0.92;
-}
-
-.sala3-maze-panel {
-  background: rgba(8, 12, 28, 0.9);
-  border: 2px solid rgba(0, 212, 255, 0.45);
-  border-radius: 18px;
-  padding: 18px 18px 12px;
-  box-shadow: 0 0 35px rgba(0, 212, 255, 0.12);
-}
-
-.sala3-maze-status {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-  margin-bottom: 12px;
-  padding: 10px 16px;
+  color: #dfe9ff;
+  background: rgba(10, 17, 32, 0.7);
+  border: 1px solid rgba(0, 212, 255, 0.4);
   border-radius: 12px;
-  background: rgba(26, 26, 46, 0.9);
-  border: 1px solid rgba(233, 69, 96, 0.7);
+  padding: 12px 14px;
+  font-size: 0.96rem;
+  display: none;
 }
 
-.sala3-maze-timer-label {
-  color: #00d4ff;
-  font-size: 0.8rem;
-  letter-spacing: 2px;
-  font-weight: 800;
-}
-
-.sala3-maze-timer {
+#sala2Timer {
   color: #e94560;
-  font-size: 2rem;
   font-weight: 900;
-  text-shadow: 0 0 15px rgba(233, 69, 96, 0.8);
-}
-
-#mazeCanvas {
-  display: block;
-  width: 800px;
-  height: 800px;
-  max-width: 100%;
-  background: #050913;
-  border: 3px solid #e94560;
-  border-radius: 14px;
-  box-shadow: inset 0 0 22px rgba(233, 69, 96, 0.18), 0 0 30px rgba(233, 69, 96, 0.18);
-}
-
-.sala3-maze-message {
-  color: #dfe7ff;
-  text-align: center;
-  margin: 14px 0 0;
-  min-height: 24px;
-  font-weight: 600;
-}
-
-@media (max-width: 900px) {
-  .sala3-maze-panel {
-    padding: 12px 12px 10px;
-  }
-
-  .sala3-maze-timer {
-    font-size: 1.5rem;
-  }
 }

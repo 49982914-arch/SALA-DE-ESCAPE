@@ -7,18 +7,49 @@
 document.addEventListener('DOMContentLoaded', function() {
     const botonDorado = document.getElementById('botonDorado');
     const clicksSpan = document.getElementById('clicksRestantes');
+    const timerSpan = document.getElementById('sala2Timer');
     const sala2Form = document.getElementById('sala2Form');
     const gameZone = document.querySelector('.sala2-game-zone');
 
-    // Only initialize if this is Sala 2
     if (!botonDorado || !gameZone) return;
 
-    let clicksRestantes = 3;
+    let clicksRestantes = 10;
     let juegoActivo = true;
     let botonVisible = false;
     let puedeClickear = false;
+    let tiempoRestante = 15;
+    let tempInterval = null;
 
-    // Lugar al que mover el botón
+    function actualizarTimerSala2() {
+        if (timerSpan) {
+            timerSpan.textContent = tiempoRestante;
+        }
+    }
+
+    function iniciarTemporizadorSala2() {
+        if (tempInterval) return;
+
+        tiempoRestante = 15;
+        actualizarTimerSala2();
+
+        tempInterval = setInterval(() => {
+            tiempoRestante -= 1;
+            actualizarTimerSala2();
+
+            if (tiempoRestante <= 0) {
+                clearInterval(tempInterval);
+                tempInterval = null;
+                clicksRestantes = 10;
+                clicksSpan.textContent = clicksRestantes;
+                if (botonVisible) {
+                    ocultarBoton();
+                }
+                moverBotonaAleatorio();
+                mostrarBoton();
+            }
+        }, 1000);
+    }
+
     function moverBotonaAleatorio() {
         if (!juegoActivo) return;
 
@@ -32,21 +63,19 @@ document.addEventListener('DOMContentLoaded', function() {
         botonDorado.style.top = randomY + 'px';
     }
 
-    // Mostrar el botón
     function mostrarBoton() {
         botonVisible = true;
         puedeClickear = true;
         botonDorado.classList.remove('oculto');
+        iniciarTemporizadorSala2();
     }
 
-    // Ocultar el botón
     function ocultarBoton() {
         botonVisible = false;
         puedeClickear = false;
         botonDorado.classList.add('oculto');
     }
 
-    // Click del botón
     botonDorado.addEventListener('click', function(e) {
         if (!puedeClickear || !juegoActivo) return;
 
@@ -57,22 +86,20 @@ document.addEventListener('DOMContentLoaded', function() {
         clicksSpan.textContent = clicksRestantes;
 
         if (clicksRestantes === 0) {
-            // Juego completado
             juegoActivo = false;
             botonDorado.classList.add('completado');
             clearInterval(cicloInterval);
+            clearInterval(tempInterval);
+            tempInterval = null;
 
-            // Enviar formulario después de 500ms
             setTimeout(() => {
                 sala2Form.submit();
             }, 500);
         } else {
-            // Mover a nueva posición para el siguiente ciclo
             moverBotonaAleatorio();
         }
     });
 
-    // Ciclo: aparece 1s, desaparece 1s, repite
     let cicloInterval = setInterval(() => {
         if (!juegoActivo) {
             clearInterval(cicloInterval);
@@ -80,16 +107,15 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         if (botonVisible) {
-            // Si está visible, ocultarlo
             ocultarBoton();
         } else {
-            // Si está oculto, mostrarlo en nueva posición
             moverBotonaAleatorio();
             mostrarBoton();
         }
-    }, 1000); // Cambia cada 1 segundo
+    }, 1000);
 
-    // Iniciar el juego - primero mostrar el botón
+    clicksSpan.textContent = clicksRestantes;
+    actualizarTimerSala2();
     moverBotonaAleatorio();
     mostrarBoton();
 });
@@ -98,20 +124,29 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function() {
     const typingText = document.getElementById('sala1TypingText');
     const lettersUniverse = document.getElementById('lettersUniverse');
+    const revealHintBtn = document.getElementById('revealHintBtn');
+    const revealHintText = document.getElementById('revealHintText');
 
     if (typingText) {
-        const phrase = 'En el universo donde todo comenzó... las letras guardan un secreto. Suma los valores de las que brillan.';
+        const phrase = 'En el cosmos, cada símbolo esconde una energía. Las que brillan con luz propia cargan el poder del universo. ¿Podés canalizar esa energía total?';
         let index = 0;
 
         function typeLetter() {
             typingText.textContent = phrase.substring(0, index);
             index++;
             if (index <= phrase.length) {
-                setTimeout(typeLetter, 42);
+                setTimeout(typeLetter, 30);
             }
         }
 
         typeLetter();
+    }
+
+    if (revealHintBtn && revealHintText) {
+        revealHintBtn.addEventListener('click', function() {
+            revealHintText.textContent = 'Cuando los astros brillan, sus energías se unen. Buscá la operación que une todos los valores en uno solo.';
+            revealHintText.style.display = 'block';
+        });
     }
 
     if (!lettersUniverse) return;
@@ -120,7 +155,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const activeLetters = ['F', 'O', 'R', 'T', 'N', 'I', 'T', 'E'];
     const distractors = [];
 
-    for (let i = 0; i < 30; i++) {
+    for (let i = 0; i < 32; i++) {
         let letter = alphabet[Math.floor(Math.random() * alphabet.length)];
         while (activeLetters.includes(letter)) {
             letter = alphabet[Math.floor(Math.random() * alphabet.length)];
@@ -128,71 +163,40 @@ document.addEventListener('DOMContentLoaded', function() {
         distractors.push(letter);
     }
 
-    const usedPositions = [];
+    const allLetters = [...activeLetters.map(letter => ({ letter, active: true })), ...distractors.map(letter => ({ letter, active: false }))];
+    const shuffled = [...allLetters].sort(() => Math.random() - 0.5);
+    const gridRows = 5;
+    const gridCols = 8;
+    const totalSlots = gridRows * gridCols;
 
-    activeLetters.forEach((letter) => {
-        let x = 0;
-        let y = 0;
-        let attempts = 0;
+    lettersUniverse.style.gridTemplateColumns = `repeat(${gridCols}, minmax(0, 1fr))`;
+    lettersUniverse.style.gridTemplateRows = `repeat(${gridRows}, minmax(72px, 1fr))`;
+    lettersUniverse.style.gap = '14px 10px';
+    lettersUniverse.style.padding = '18px';
 
-        do {
-            x = 8 + Math.random() * 84;
-            y = 14 + Math.random() * 70;
-            attempts++;
-        } while (attempts < 80 && usedPositions.some(pos => Math.abs(pos.x - x) < 12 && Math.abs(pos.y - y) < 14));
-
+    for (let i = 0; i < totalSlots; i++) {
         const tile = document.createElement('div');
-        tile.className = 'letter-tile active';
-        tile.style.left = x + '%';
-        tile.style.top = y + '%';
-        tile.style.zIndex = '3';
+        tile.className = 'letter-tile';
 
-        const token = document.createElement('span');
-        token.className = 'letter-token';
-        token.textContent = letter;
-
-        const number = document.createElement('span');
-        number.className = 'letter-number';
-        number.textContent = alphabet.indexOf(letter) + 1;
-
-        tile.appendChild(token);
-        tile.appendChild(number);
-        lettersUniverse.appendChild(tile);
-        usedPositions.push({ x, y });
-    });
-
-    for (let i = 0; i < distractors.length; i++) {
-        let attempts = 0;
-        let x = 0;
-        let y = 0;
-        let overlap = true;
-
-        while (overlap && attempts < 80) {
-            x = 8 + Math.random() * 84;
-            y = 14 + Math.random() * 70;
-            overlap = usedPositions.some(pos => Math.abs(pos.x - x) < 10 && Math.abs(pos.y - y) < 12);
-            attempts++;
-        }
-
-        if (!overlap) {
-            const tile = document.createElement('div');
-            tile.className = 'letter-tile distractor';
-            tile.style.left = x + '%';
-            tile.style.top = y + '%';
+        if (i < shuffled.length) {
+            const item = shuffled[i];
+            tile.classList.add(item.active ? 'active' : 'distractor');
 
             const token = document.createElement('span');
             token.className = 'letter-token';
-            token.textContent = distractors[i];
+            token.textContent = item.letter;
 
             const number = document.createElement('span');
             number.className = 'letter-number';
-            number.textContent = alphabet.indexOf(distractors[i]) + 1;
+            number.textContent = alphabet.indexOf(item.letter) + 1;
 
             tile.appendChild(token);
             tile.appendChild(number);
-            lettersUniverse.appendChild(tile);
-            usedPositions.push({ x, y });
+        } else {
+            tile.classList.add('empty-slot');
         }
+
+        lettersUniverse.appendChild(tile);
     }
 });
 
@@ -213,8 +217,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const start = { x: 1, y: 1 };
     let player = { x: 1, y: 1 };
     let goal = { x: 1, y: 1 };
-    let timeLeft = 300;
+    let timeLeft = 90;
     let completed = false;
+    let bananaVisible = true;
     const maze = Array.from({ length: gridSize }, () => Array(gridSize).fill(1));
 
     function generateMaze() {
@@ -269,6 +274,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function resetPlayer() {
         player = { ...start };
+        timeLeft = 90;
+        updateTimer();
         messageEl.textContent = 'Has chocado con una pared. Vuelves al inicio.';
     }
 
@@ -318,7 +325,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 ctx.fillRect(px, py, cellSize, cellSize);
             }
         }
-
         ctx.restore();
 
         const glow = ctx.createRadialGradient(lightX, lightY, 10, lightX, lightY, 120);
@@ -331,8 +337,11 @@ document.addEventListener('DOMContentLoaded', function() {
         ctx.fillStyle = glow;
         ctx.fillRect(0, 0, canvas.width, canvas.height);
 
+        if (bananaVisible) {
+            drawSprite('/images/skin_banana_2026-removebg-preview.png', goal.x * cellSize + (cellSize - 30) / 2, goal.y * cellSize + (cellSize - 30) / 2, 30);
+        }
+
         drawSprite('/images/skin%20jonesey.png', player.x * cellSize + (cellSize - 30) / 2, player.y * cellSize + (cellSize - 30) / 2, 30);
-        drawSprite('/images/skin_banana_2026-removebg-preview.png', goal.x * cellSize + (cellSize - 30) / 2, goal.y * cellSize + (cellSize - 30) / 2, 30);
     }
 
     function movePlayer(dx, dy) {
@@ -384,6 +393,13 @@ document.addEventListener('DOMContentLoaded', function() {
     drawMaze();
     document.addEventListener('keydown', handleKeydown);
 
+    setInterval(() => {
+        bananaVisible = !bananaVisible;
+        if (!completed) {
+            drawMaze();
+        }
+    }, 10000);
+
     let timerInterval = setInterval(() => {
         if (completed) {
             clearInterval(timerInterval);
@@ -391,7 +407,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         if (timeLeft <= 0) {
-            timeLeft = 300;
+            timeLeft = 90;
             messageEl.textContent = 'Se agotó el tiempo. Vuélves al inicio.';
             resetPlayer();
             updateTimer();
@@ -402,5 +418,15 @@ document.addEventListener('DOMContentLoaded', function() {
         timeLeft -= 1;
         updateTimer();
     }, 1000);
+
+    setInterval(() => {
+        bananaVisible = true;
+        setTimeout(() => {
+            if (!completed) {
+                bananaVisible = false;
+                drawMaze();
+            }
+        }, 500);
+    }, 10000);
 });
 

@@ -38,10 +38,15 @@
         <div id="lettersUniverse" class="letters-universe"></div>
     </div>
 
+    <div class="sala1-pista-container">
+        <button type="button" id="revealHintBtn" class="reveal-hint-btn">💡 Revelar pista</button>
+        <p id="revealHintText" class="reveal-hint-text" style="display: none;"></p>
+    </div>
+
     <div class="sala1-input-section">
         <form method="post" action="@Url.Action("Sala1", "Home")" class="form-cosmic">
-            <label for="respuestaInput" class="input-label">🔐 SUMA LOS VALORES:</label>
-            <input type="text" name="respuesta" id="respuestaInput" class="cosmic-input" placeholder="107" maxlength="10" autocomplete="off">
+            <label for="respuestaInput" class="input-label">🔐 CANALIZAR ENERGÍA:</label>
+            <input type="text" name="respuesta" id="respuestaInput" class="cosmic-input" placeholder="000" maxlength="10" autocomplete="off">
             <button type="submit" class="submit-btn-cosmic">⚡ DESCIFRAR CÓDIGO ⚡</button>
         </form>
 
